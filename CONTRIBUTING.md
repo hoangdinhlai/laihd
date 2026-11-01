@@ -9,7 +9,7 @@ readings live in `server/platform/` (one module per system, same functions); CI 
 
 ```bash
 git clone <your fork>
-cd my-office
+cd Office
 npm install
 npm run dev          # http://localhost:4310 with Turbopack and hot reload
 ```
