@@ -1,4 +1,5 @@
 // The weekly recap card (src/office/ui/wrapped.js). The card is 1080 px wide: keep the lines short.
+import { BRAND } from '../../../brand.js';
 export default {
   loading: 'Adding up the last 7 days…',
   loadFailed: "Couldn't read this week's numbers.",
@@ -23,7 +24,7 @@ export default {
   longest: '⏱️ Longest unbroken run: {time}',
   commits: { one: '🖨️ {c} commit', other: '🖨️ {c} commits' },
   pushes: { one: '🚀 {c} push', other: '🚀 {c} pushes' },
-  footer: 'My Office · a 3D office for Claude Code',
+  footer: `${BRAND} · a 3D office for Claude Code`,
   fileName: 'my-office-week-{date}.png',
   fileNow: 'latest',
   copied: 'Image copied. Paste it into your post.',

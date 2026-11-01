@@ -1,5 +1,6 @@
 // The activity column and the session list.
 import { state } from '../core/state.js';
+import { BRAND } from '../../brand.js';
 import { $, el, fmtBytes, fmtClock, hhmm, nowMs } from '../core/env.js';
 import { STATUS_LABEL, verb } from './event-text.js';
 import { TYPE_ICON, TYPE_TONE, icon } from './icons.js';
@@ -242,7 +243,7 @@ export function renderHud() {
   }));
   $('bell-dot').hidden = !waiting;
   const yours = waiting + unseenDone.size;
-  document.title = yours ? tr('activity.docTitle', { n: yours }) : 'My Office';
+  document.title = yours ? tr('activity.docTitle', { n: yours }) : BRAND;
 }
 export function updateMarkers(t) {
   const sel = state.selectedId ? workers.get(state.selectedId) : null;

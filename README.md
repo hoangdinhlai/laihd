@@ -1,6 +1,9 @@
-# My Office
+# My Office — laihd
 
 English · [Tiếng Việt](README.vi.md)
+
+> laihd's own office, built on [My Office](https://github.com/khanh020905/my-office) by khanh020905 (MIT).
+> The office shows the name **laihd** on its sign, in the top bar and on the photos it takes.
 
 A 3D office where your Claude Code sessions come to work. Each session is a character at a desk:
 
@@ -14,11 +17,11 @@ The office also looks after your Mac: RAM per session, forgotten dev servers, on
 ![My Office: the company floor with sessions at work](docs/media/demo.gif)
 
 **Try it before you install anything.** The demo has made-up projects and needs no Claude Code: run `npm run dev` and
-open <http://localhost:4310/?demo>. Or try it online, nothing to install: <https://khanh020905.github.io/my-office/>
+open <http://localhost:4310/?demo>. Or try it online, nothing to install: <https://laihd.github.io/my-office/>
 (a static build of the same demo, published by `.github/workflows/pages.yml`).
 
-**Questions or ideas?** Ask in [Discussions → Q&A](https://github.com/khanh020905/my-office/discussions/categories/q-a), suggest something in
-[Ideas](https://github.com/khanh020905/my-office/discussions/categories/ideas), or show your office in [Show and tell](https://github.com/khanh020905/my-office/discussions/categories/show-and-tell).
+**Questions or ideas?** Ask in [Discussions → Q&A](https://github.com/laihd/my-office/discussions/categories/q-a), suggest something in
+[Ideas](https://github.com/laihd/my-office/discussions/categories/ideas), or show your office in [Show and tell](https://github.com/laihd/my-office/discussions/categories/show-and-tell).
 
 > My Office is a community project. It is not made by, endorsed by or affiliated with Anthropic.
 
@@ -28,7 +31,7 @@ You need Node.js 20.9 or newer and Claude Code, on macOS, Linux or Windows. The 
 servers, cleanup) reads each system its own way; opening a session's IDE window and quitting apps are macOS only.
 
 ```bash
-git clone https://github.com/khanh020905/my-office.git && cd my-office
+git clone https://github.com/laihd/my-office.git && cd my-office
 npm install
 node bin/cli.mjs install --service   # adds the hooks to ~/.claude/settings.json and runs the office at login
 node bin/cli.mjs doctor              # checks Node, the server, every hook and the background service

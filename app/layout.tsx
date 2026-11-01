@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import Script from 'next/script';
 import { getLang, getT } from '@/i18n/server';
+import { BRAND } from '@/brand';
 // One stylesheet per area of the screen, in cascade order (later files override earlier ones).
 import '@/styles/fonts.css';
 import '@/styles/base.css';
@@ -42,11 +43,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const at = (sub: string) => `${SITE}${ROOT}${sub}`, url = at(lang === 'en' ? '/' : `/${lang}/`);
   return {
     ...(SITE && { metadataBase: new URL(SITE) }),
-    title: { absolute: 'My Office' }, description, applicationName: 'My Office',
+    title: { absolute: BRAND }, description, applicationName: BRAND,
     // (on an iPhone's home screen: full screen, its own name; the manifest is app/manifest.ts)
-    appleWebApp: { capable: true, title: 'My Office', statusBarStyle: 'black-translucent' }, formatDetection: { telephone: false },
+    appleWebApp: { capable: true, title: BRAND, statusBarStyle: 'black-translucent' }, formatDetection: { telephone: false },
     keywords: ['Claude Code', 'AI agents', '3D office', 'developer tools', 'văn phòng 3D', 'Claude Code dashboard'],
-    openGraph: { type: 'website', siteName: 'My Office', title, description, locale: lang === 'vi' ? 'vi_VN' : 'en_US', ...(SITE && { url }) },
+    openGraph: { type: 'website', siteName: BRAND, title, description, locale: lang === 'vi' ? 'vi_VN' : 'en_US', ...(SITE && { url }) },
     twitter: { card: 'summary_large_image', title, description },
     ...(SITE && { alternates: { canonical: url, languages: { en: at('/'), vi: at('/vi/') } } }),
   };

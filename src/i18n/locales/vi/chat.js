@@ -1,7 +1,8 @@
 // The company's group chat (ui/group-chat.js): the window, and what people write in it. An array is several ways to
 // say the same thing, one picked at random.
+import { BRAND_TEAM } from '../../../brand.js';
 export default {
-  group: 'Công ty My Office',
+  group: BRAND_TEAM.vi,
   open: 'Nhóm chat',
   openTitle: 'Nhóm chat của công ty: mọi người nhắn về việc đang làm (chỉ trên máy này, không gửi cho Claude)',
   members: '{n} thành viên',

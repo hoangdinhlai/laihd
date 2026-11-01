@@ -1,14 +1,17 @@
-# My Office
+# My Office — laihd
 
 [English](README.md) · Tiếng Việt
+
+> Văn phòng riêng của laihd, dựng trên [My Office](https://github.com/khanh020905/my-office) của khanh020905 (giấy phép MIT).
+> Tên **laihd** hiện trên biển sảnh, thanh trên cùng và ảnh chụp văn phòng.
 
 ![My Office: tầng công ty với các phiên đang làm việc](docs/media/demo.gif)
 
 Văn phòng chibi 3D cho thấy các session Claude Code đang làm gì, kèm bảng "Máy Mac" để xem RAM, CPU, ổ đĩa và giải phóng.
 
-Mở: http://localhost:4310 · Xem thử không cần Claude Code: http://localhost:4310/?demo · Xem online, không cần cài: https://khanh020905.github.io/my-office/vi/
+Mở: http://localhost:4310 · Xem thử không cần Claude Code: http://localhost:4310/?demo · Xem online, không cần cài: https://laihd.github.io/my-office/vi/
 
-**Có câu hỏi hay ý tưởng?** Hỏi ở [Discussions → Q&A](https://github.com/khanh020905/my-office/discussions/categories/q-a), góp ý ở [Ideas](https://github.com/khanh020905/my-office/discussions/categories/ideas), hoặc khoe văn phòng của bạn ở [Show and tell](https://github.com/khanh020905/my-office/discussions/categories/show-and-tell).
+**Có câu hỏi hay ý tưởng?** Hỏi ở [Discussions → Q&A](https://github.com/laihd/my-office/discussions/categories/q-a), góp ý ở [Ideas](https://github.com/laihd/my-office/discussions/categories/ideas), hoặc khoe văn phòng của bạn ở [Show and tell](https://github.com/laihd/my-office/discussions/categories/show-and-tell).
 
 Chạy được trên macOS, Linux và Windows (bảng máy đọc từng hệ điều hành theo cách riêng; mở cửa sổ IDE và thoát app chỉ có trên macOS). Giao diện mặc định là tiếng Anh; đổi sang tiếng Việt trong **Cài đặt → Ngôn ngữ** (hoặc đặt `OFFICE_LANG=vi`).
 
@@ -17,7 +20,7 @@ Chạy được trên macOS, Linux và Windows (bảng máy đọc từng hệ �
 ## Cài
 
 ```bash
-git clone https://github.com/khanh020905/my-office.git && cd my-office
+git clone https://github.com/laihd/my-office.git && cd my-office
 npm install
 node bin/cli.mjs install --service   # thêm hook vào ~/.claude/settings.json + chạy nền khi đăng nhập
 node bin/cli.mjs doctor              # kiểm tra Node, curl, server, đủ hook, dịch vụ nền

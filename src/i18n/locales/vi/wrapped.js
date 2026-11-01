@@ -1,4 +1,5 @@
 // The weekly recap card (src/office/ui/wrapped.js). The card is 1080 px wide: keep the lines short.
+import { BRAND } from '../../../brand.js';
 export default {
   loading: 'Đang tổng hợp 7 ngày qua…',
   loadFailed: 'Không đọc được số liệu tuần này.',
@@ -20,7 +21,7 @@ export default {
   longest: '⏱️ Lần chạy liền dài nhất: {time}',
   commits: '🖨️ {c} commit',
   pushes: '🚀 {c} lần đẩy code',
-  footer: 'My Office · văn phòng 3D cho Claude Code',
+  footer: `${BRAND} · văn phòng 3D cho Claude Code`,
   fileName: 'my-office-tuan-{date}.png',
   fileNow: 'nay',
   copied: 'Đã chép ảnh, dán vào bài đăng là xong.',
