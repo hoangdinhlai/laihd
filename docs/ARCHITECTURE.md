@@ -124,7 +124,7 @@ engine switches to demo mode and talks to no API.
 | `life/rain.js` | 78 | Umbrellas and a wet-floor sign when it rains. |
 | `life/seasons.js` | 234 | Seasonal decorations: Halloween, Christmas, Tết. |
 | `life/tests.js` | 116 | The test board: a screen on a stand in the server room (in the small office, on the wall by the racks) with a row for each session at a desk. |
-| `life/trophies.js` | 119 | The trophy cabinet and the opening plaque. |
+| `life/trophies.js` | 120 | The trophy cabinet and the opening plaque. |
 | `life/weather.js` | 90 | Real weather outside (Open-Meteo). |
 | `life/your-turn.js` | 37 | "Your turn": sessions that finished or wait for you. |
 | `net/live.js` | 151 | The live connection: sessions, desks, teams, events. |
@@ -166,7 +166,7 @@ engine switches to demo mode and talks to no API.
 | `scene/lights.js` | 35 | Sun, sky light and the room lamps (per-room night lighting on the company floor). |
 | `scene/quality.js` | 77 | Graphics quality: Auto (the default), Low, Medium or High, each viewer's own choice (Settings → Display). |
 | `scene/renderer.js` | 91 | Renderer, cameras, orbit controls, post-processing and environment light. |
-| `ui/activity.js` | 301 | The activity column and the session list. |
+| `ui/activity.js` | 302 | The activity column and the session list. |
 | `ui/burn.js` | 212 | What eats your plan: where Claude Code's usage goes, by model, MCP server, skill, plugin, subagent, project and session. |
 | `ui/cache-words.js` | 53 | How a session's prompt cache reads on screen ("Đồng hồ bộ nhớ đệm", src/shared/cache-clock.js; the cups on the desks are world/props/cups.js): the line under the session drawer's folder, the one under the chat's "Gửi tới" and in its list of conversations, list mode's cards, and the switch in Settings → More for the "about to go cold" notification. |
 | `ui/camera-bar.js` | 58 | The camera toolbar. |
@@ -183,7 +183,7 @@ engine switches to demo mode and talks to no API.
 | `ui/notify.js` | 64 | Notifications on this phone (Web Push: server/push.mjs sends them, public/sw.js shows them): Claude's answers in the group chat and an approval waiting, even with the office closed and the phone locked. |
 | `ui/permissions.js` | 150 | Approve / deny cards and Claude's questions. |
 | `ui/phone.js` | 94 | The office on a phone: an app-like layout for small screens, upright or held sideways. |
-| `ui/photo.js` | 138 | Photo mode: the office alone over the whole window, the camera free (any angle, closer or further, pan with the right button), then a PNG at the screen's size, Full HD or 4K. |
+| `ui/photo.js` | 139 | Photo mode: the office alone over the whole window, the camera free (any angle, closer or further, pan with the right button), then a PNG at the screen's size, Full HD or 4K. |
 | `ui/portraits.js` | 64 | Portraits of the two character looks for Settings → Characters: two people in each look, drawn by the office's own renderer (same materials, light and tone mapping, so they match what you will see) into a canvas, the first time the tab opens. |
 | `ui/session-account.js` | 54 | "Change account" in a session's drawer (on this computer only): the accounts of the plan card, each with what it has left. |
 | `ui/session-drawer.js` | 384 | The session drawer: chat, steps, subagents. |
@@ -195,7 +195,7 @@ engine switches to demo mode and talks to no API.
 | `ui/tips.js` | 115 | The first visit: a short tour of what you can click. |
 | `ui/topbar.js` | 232 | Phone modal, notifications, the night switch. |
 | `ui/whiteboard.js` | 282 | The whiteboard: agents' tasks and your own sticky notes. |
-| `ui/wrapped.js` | 107 | The week in review: a 1080 × 1350 picture card (the office as it looks right now, then the week's numbers) to save as a PNG or copy, for sharing. |
+| `ui/wrapped.js` | 108 | The week in review: a 1080 × 1350 picture card (the office as it looks right now, then the week's numbers) to save as a PNG or copy, for sharing. |
 | `world/backdrops/beach.js` | 117 | Beach backdrop: sand, surf, palms, umbrellas and loungers. |
 | `world/backdrops/city.js` | 306 | The city backdrop: street grid, buildings, rooftops, lamps and traffic. |
 | `world/backdrops/countryside.js` | 186 | Countryside backdrop: rice paddies, dikes, a river, a bridge, a village. |
@@ -243,7 +243,7 @@ engine switches to demo mode and talks to no API.
 | `world/furniture/room-pieces.js` | 107 | Wall clock, framed art, bookshelf, sofa corner and the globe. |
 | `world/furniture/server-racks.js` | 65 | Server racks with LEDs and fans that follow the Mac's CPU. |
 | `world/layout.js` | 43 | The floor plans (cozy, pro, hq): where the shared furniture stands, and the headquarters wing. |
-| `world/pro/floor.js` | 347 | The company floor: rooms, partitions and furniture. |
+| `world/pro/floor.js` | 348 | The company floor: rooms, partitions and furniture. |
 | `world/pro/pieces.js` | 142 | Company floor building pieces: floor finishes, walls, glass, chairs, dining sets. |
 | `world/pro/wing.js` | 134 | Headquarters' wing: in front of the company floor, a corridor along it, a corridor down the middle and four department rooms of two pods each (the desks, pods' screens and carpets come from the shared code). |
 | `world/props/aquarium.js` | 44 | The aquarium. |
