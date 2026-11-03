@@ -49,7 +49,7 @@ export default {
     on: 'đang nhận dữ liệu',
     off: 'mất kết nối, đang thử lại…',
     otherProject: 'khác',
-    team: 'Team {name}{more} · {n}',
+    team: 'Team {name}{more}',
     teamShared: 'Cụm bàn của Team {name}, ngồi chung: {others}',
     teamTitle: 'Cụm bàn của Team {name}',
   },

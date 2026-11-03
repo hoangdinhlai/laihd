@@ -6,7 +6,7 @@
 // office found; matching ignores case. The value is what the pod's chip, its door plaque in a department room
 // and its tooltip all say.
 export const TEAMS = {
-  'mamnon-reco-kids': 'MEP',
+  'mamnon-reco-kids': 'TQT',
 };
 
 /** The name a pod goes by: whatever TEAMS says for this project, else the project's own name. */

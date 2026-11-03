@@ -53,7 +53,7 @@ export default {
     on: 'receiving data',
     off: 'connection lost, retrying…',
     otherProject: 'other',
-    team: 'Team {name}{more} · {n}',
+    team: 'Team {name}{more}',
     teamShared: "{name}'s desks, shared with: {others}",
     teamTitle: 'Desks of the {name} project',
   },
