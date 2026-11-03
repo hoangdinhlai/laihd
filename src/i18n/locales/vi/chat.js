@@ -93,7 +93,7 @@ export default {
   replyTo: 'Trả lời {name}',
   everyone: 'Tất cả',
   you: 'Bạn',
-  boss: 'Sếp',
+  boss: 'Boss',
   hidden: '(đã ẩn)',
   membersTitle: 'Thành viên',
   memberWork: 'Đang làm việc',

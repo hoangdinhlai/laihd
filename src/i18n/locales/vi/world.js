@@ -44,7 +44,7 @@ export default {
   },
   // the traffic police on the street (street-csgt.js): what they say, the card, the record (biên bản)
   csgt: {
-    name: 'Cảnh sát giao thông',
+    name: 'Traffic Police',
     chip: 'CSGT',
     chipIdle: 'đang làm nhiệm vụ',
     chipStop: 'đang dừng xe',
