@@ -1,5 +1,6 @@
 // Demo mode: fictional projects and a fictional Mac.
 import { state } from '../core/state.js';
+import { ROLES } from '../../roles.js';
 import { $, STATIC, officeNow, rand, replay } from '../core/env.js';
 import { CHAIR_IDLE, chairs } from '../world/desks.js';
 import { sessions, subs, workers } from '../people/workers.js';
@@ -195,7 +196,7 @@ export function startDemo() {
   state.todos = DEMO_TODOS.map((t) => ({ ...t })); onTodos();
   state.stats = { prompts: 0, read: 0, edit: 0, cmd: 0, deploy: 0 };
   demoProjects().forEach((p, i) => {
-    const s = { usage: { cost: 0.4 + i * 0.9, ctx: i === 0 ? 168000 : 38000 + i * 21000, ctxMax: 200000, model: 'claude-opus-5-5', out: 0 }, id: `demo-${i}`, pid: 52000 + i, name: p.name, dir: p.dir, link: null, desk: i, status: 'rest', lastPrompt: '', taskStart: 0, counts: { read: 0, edit: 0, cmd: 0, web: 0 }, subs: [], doneSubs: [], last: null, lastAt: Date.now() - (i + 1) * 9 * 60e3, todos: demoChecklist(i) || [] };
+    const s = { usage: { cost: 0.4 + i * 0.9, ctx: i === 0 ? 168000 : 38000 + i * 21000, ctxMax: 200000, model: 'claude-opus-5-5', out: 0 }, id: `demo-${i}`, pid: 52000 + i, name: p.name, role: ROLES[i] || '', dir: p.dir, link: null, desk: i, status: 'rest', lastPrompt: '', taskStart: 0, counts: { read: 0, edit: 0, cmd: 0, web: 0 }, subs: [], doneSubs: [], last: null, lastAt: Date.now() - (i + 1) * 9 * 60e3, todos: demoChecklist(i) || [] };
     upsertSession(s, false);
     demoLoop(s, p, i < 4);
   });

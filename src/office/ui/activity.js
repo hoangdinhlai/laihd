@@ -186,7 +186,7 @@ function renderRail() {
       if (proj && proj !== dn(s)) { const pj = el('span', 'ri-proj', proj); pj.title = s.origin ? tr('activity.runsIn', { dir: s.dir, origin: s.origin }) : `${s.dir}`; r.name.after(pj); }
       if (s.link) { const rc = el('span', 'ri-rc'); rc.title = tr('activity.remoteOn'); rc.append(icon('phone')); r.top.append(rc); }
     }
-    r.b.title = `${dn(s)}${s.title ? ` (${s.name})` : ''} · ${s.dir || ''}`;
+    r.b.title = [dn(s), s.title, s.dir].filter(Boolean).join(' · ');
     const d = doingOf(s);
     if (r.dIcoName !== d.ic) { r.dIcoName = d.ic; r.dIco.replaceChildren(icon(d.ic)); }
     if (r.dTxt.textContent !== d.text) r.dTxt.textContent = d.text;
@@ -200,7 +200,7 @@ function renderRail() {
     const sig = subsNow.map((x) => `${x.id}:${x.last?.label || ''}:${x.desc}`).join('|');
     if (sig !== r.subSig) { r.subSig = sig; r.subList.replaceChildren(...subsNow.map((x) => subRow(s, x))); }
     r.subList.hidden = !subsNow.length;
-    const match = !q || s.name.toLowerCase().includes(q) || String(s.title || '').toLowerCase().includes(q) || String(s.dir || '').toLowerCase().includes(q);
+    const match = !q || [s.name, s.role, s.title, s.dir].some((v) => String(v || '').toLowerCase().includes(q));
     const folded = s.status === 'rest' && restCollapsed && !q && railFilter !== 'rest';
     r.li.hidden = !match || (railFilter && s.status !== railFilter) || folded;
     r.c.dataset.status = s.status; r.c.setAttribute('aria-current', cur); r.cd.style.background = color;

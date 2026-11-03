@@ -34,9 +34,10 @@ export const lunchHooks = {};
 const viaClock = (kind, w, then) => (clockHooks[kind] ? clockHooks[kind](w, then) : then());
 export function hash(s) { let h = 2166136261; for (const ch of String(s)) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
 export const colorOf = (s) => (s.desk >= 0 ? PALETTE[s.desk] : PALETTE[hash(s.name) % PALETTE.length]);
-// What to call a session on screen: the chat's title (your rename, else Claude's), else its short name.
-// The short name stays the identity: looks, colours and the timeline are keyed by it.
-export const dn = (s) => (s ? s.title || s.name : '');
+// What to call a session on screen: the role the office gave it (src/roles.js), else the chat's title (your
+// rename, else Claude's), else its short name. The short name stays the identity: looks, colours and the
+// timeline are keyed by it, and the session list shows the project folder beside the role.
+export const dn = (s) => (s ? s.role || s.title || s.name : '');
 export const dnOf = (e) => dn(sessions.get(e.sess)) || e.name || tr('common.session');
 // Which agent a session runs, shown as its logo in the list (Claude Code today; Codex and Gemini when the server
 // reports them). The marks are the brands' own logos as published by Simple Icons (CC0 path data, v15.17.0); the

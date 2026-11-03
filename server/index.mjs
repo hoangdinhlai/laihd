@@ -19,6 +19,7 @@ import { testCounts, testRunner } from './testrun.mjs';
 import { scanUsage, blankUsage, ctxMax } from './usage.mjs';
 import next from 'next';
 import { buildTimeline } from '../src/shared/timeline.js';
+import { ROLES } from '../src/roles.js';
 import { dangerKey } from '../src/shared/danger.js';
 import { createChatEngine, REACTIONS } from '../src/shared/chat-engine.js';
 import { createTasks } from './tasks.mjs';
@@ -279,7 +280,7 @@ setInterval(() => { if (watching()) git.pollCi(); }, 120_000).unref();
 function rollDay() { if (stats.day !== today()) stats = { day: today(), read: 0, edit: 0, cmd: 0, web: 0, prompts: 0, deploy: 0, commit: 0 }; }
 
 function newSession(key) {
-  return { id: crypto.randomUUID(), key, sid: null, pid: null, name: '', cwd: '', link: null, desk: freeDesk(), status: 'rest', busy: false,
+  return { id: crypto.randomUUID(), key, sid: null, pid: null, name: '', role: freeRole(), cwd: '', link: null, desk: freeDesk(), status: 'rest', busy: false,
     lastPrompt: '', taskStart: 0, counts: { read: 0, edit: 0, cmd: 0, web: 0 }, subs: {}, last: null, fromFile: false, lastEventAt: 0, createdAt: Date.now() };
 }
 function freeDesk() {
@@ -287,8 +288,14 @@ function freeDesk() {
   for (let i = 0; i < DESKS; i++) if (!used.has(i)) return i;
   return -1;
 }
+// The role this session is known by on screen (src/roles.js): the first one no one here holds, so the office fills
+// up from the top of that list. With every role taken, '' falls back to the session's own name in the page.
+function freeRole() {
+  const used = new Set([...sessions.values()].map((s) => s.role).filter(Boolean));
+  return ROLES.find((r) => !used.has(r)) || '';
+}
 const pubSub = (x) => ({ id: x.id, type: x.type, desc: x.desc || '', last: x.last || null, startedAt: x.startedAt, endedAt: x.endedAt || null, steps: x.steps || 0 });
-const pub = (s) => ({ id: s.id, pid: s.pid, name: s.name, title: s.title || '', dir: tilde(s.cwd), link: s.link, desk: s.desk, status: s.status, lastPrompt: s.lastPrompt && oneLine(unwrapPaste(s.lastPrompt)),
+const pub = (s) => ({ id: s.id, pid: s.pid, name: s.name, role: s.role || '', title: s.title || '', dir: tilde(s.cwd), link: s.link, desk: s.desk, status: s.status, lastPrompt: s.lastPrompt && oneLine(unwrapPaste(s.lastPrompt)),
   taskStart: s.taskStart, counts: s.counts, subs: Object.values(s.subs).map(pubSub), doneSubs: (s.doneSubs || []).map(pubSub), last: s.last, acct: acctOf(s),
   entry: s.entry || '', moved: s.parked ? { to: acctShown(s.parked.to), at: s.parked.at } : null,
   lastAt: s.lastEventAt || s.createdAt, doneAt: s.doneAt || 0, todos: s.todos || [], lastReply: s.lastReply || '', origin: s.origin || '',

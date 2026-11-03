@@ -106,7 +106,7 @@ engine switches to demo mode and talks to no API.
 | `core/optimize.js` | 141 | Merging static meshes into fewer draw calls, then starting. |
 | `core/state.js` | 3 | Values that more than one module assigns (the clock, the selection, mode switches…), on one shared object so any module can change them. |
 | `demo/demo-log.js` | 17 | The demo's conversation logs (a session's, shown in its drawer, and each subagent's steps), kept to what the drawer can show. |
-| `demo/demo.js` | 328 | Demo mode: fictional projects and a fictional Mac. |
+| `demo/demo.js` | 329 | Demo mode: fictional projects and a fictional Mac. |
 | `interact/first-person.js` | 263 | First person: walk the office as your own character, and (with the city outside) down the lift and out on the street: the pavements, the zebras (the traffic stops for you), the shops, the bánh mì cart. |
 | `interact/place-cards.js` | 201 | Place cards: what happens at each place. |
 | `interact/place-chips.js` | 182 | Place chips over the furniture and label decluttering. |
@@ -159,7 +159,7 @@ engine switches to demo mode and talks to no API.
 | `people/staff.js` | 394 | People who work here but aren't sessions: the receptionist, the evening cleaner, a Shopee courier with a parcel. |
 | `people/team-lines.js` | 28 | Dashed lines from a boss to its subagents. |
 | `people/teatime.js` | 91 | Friday 16:00: afternoon tea. |
-| `people/workers.js` | 547 | Workers: one character per session or subagent, what they do and where they walk. |
+| `people/workers.js` | 548 | Workers: one character per session or subagent, what they do and where they walk. |
 | `replay/replay.js` | 162 | Replay and recording. |
 | `replay/timeline.js` | 193 | The timeline: one lane per session. |
 | `scene/blocks.js` | 32 | Building blocks: materials, rounded boxes, cylinders, rugs, canvas textures. |
