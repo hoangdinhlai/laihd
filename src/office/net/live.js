@@ -12,6 +12,7 @@ import { PALETTE, addWorker, dn, dropSub, hash, leaving, leavingIds, sessions, s
 import { queueUi } from '../ui/activity.js';
 import { closeSession } from '../ui/session-drawer.js';
 import { t as tr } from '../../i18n/index.js';
+import { teamName } from '../../teams.js';
 
 export let TOKEN;
 export function setConn(on) { const c = $('conn'); c.dataset.state = on ? 'on' : 'off'; c.lastElementChild.textContent = tr(on ? 'activity.live.on' : 'activity.live.off'); }
@@ -21,7 +22,9 @@ export function setConn(on) { const c = $('conn'); c.dataset.state = on ? 'on' :
    the nearest free area. Areas are remembered on this device, so a project comes back to the same desks tomorrow; an
    area someone else remembers is the last one handed to a newcomer. Only when every area is taken do projects share. */
 const deskOf = new Map(), rowTeam = new Map();
-const projOf = (s) => s?.git?.repo || String(s?.dir || '').split('/').filter(Boolean).pop() || tr('activity.live.otherProject');
+// A project's own name: its git repository, else the folder its sessions sit in — the last part of the path,
+// split on both separators so a Windows path ("~\Desktop\shop-api") gives the folder and not the whole path.
+const projOf = (s) => s?.git?.repo || String(s?.dir || '').split(/[\\/]/).filter(Boolean).pop() || tr('activity.live.otherProject');
 // partners sit face to face across a pod's screen (back-left, then front-right…): one faces the camera, the other's
 // screens do; a room fills its first pod before the second
 const SEAT_ORDER = [0, 3, 1, 2, 4, 7, 5, 6];
@@ -67,7 +70,7 @@ export function freeDesk(id) {
 export let teamTags;
 export function updateTeamTags() {
   const here = teamTags.map((_, u) => [...sessions.values()].filter((s) => s.desk >= 0 && unitOfDesk[s.desk] === u));
-  const nameOf = (u) => rowTeam.get(u) || [...new Set(here[u].map(projOf))][0] || '';
+  const nameOf = (u) => teamName(rowTeam.get(u) || [...new Set(here[u].map(projOf))][0] || '');
   teamTags.forEach((tg, u) => {
     // both halves of a pod with one project: one chip for the pod (on the first half), both carpets
     const twin = UNITS[u].pod != null ? u ^ 1 : -1, joined = twin >= 0 && here[twin].length && nameOf(twin) === nameOf(u);

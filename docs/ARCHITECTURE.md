@@ -127,7 +127,7 @@ engine switches to demo mode and talks to no API.
 | `life/trophies.js` | 120 | The trophy cabinet and the opening plaque. |
 | `life/weather.js` | 90 | Real weather outside (Open-Meteo). |
 | `life/your-turn.js` | 37 | "Your turn": sessions that finished or wait for you. |
-| `net/live.js` | 151 | The live connection: sessions, desks, teams, events. |
+| `net/live.js` | 154 | The live connection: sessions, desks, teams, events. |
 | `people/accountant.js` | 255 | The accountant (company floor): her desk in the director's office, the day's API cost on her screen, the report to the director at 17:30, and a word with whoever spends the most when the plan's limit gets near. |
 | `people/bedding.js` | 64 | Nap bedding: blanket, pillow, folding it away. |
 | `people/billiards.js` | 484 | Pool in the lounge (company floor; the table: world/props/billiards.js). |

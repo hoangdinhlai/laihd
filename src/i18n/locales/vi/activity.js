@@ -49,8 +49,8 @@ export default {
     on: 'đang nhận dữ liệu',
     off: 'mất kết nối, đang thử lại…',
     otherProject: 'khác',
-    team: 'Nhóm {name}{more} · {n}',
-    teamShared: 'Cụm bàn của {name}, ngồi chung: {others}',
-    teamTitle: 'Cụm bàn của dự án {name}',
+    team: 'Team {name}{more} · {n}',
+    teamShared: 'Cụm bàn của Team {name}, ngồi chung: {others}',
+    teamTitle: 'Cụm bàn của Team {name}',
   },
 };
