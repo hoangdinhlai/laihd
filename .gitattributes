@@ -1,0 +1,3 @@
+# PowerShell 5.1 đọc đúng tiếng Việt chỉ khi file có BOM và xuống dòng kiểu Windows:
+# giữ nguyên file .ps1 khi qua tay git, đừng đổi CRLF thành LF.
+*.ps1 -text

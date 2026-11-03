@@ -1,4 +1,4 @@
-# Cập nhật văn phòng trên máy này: lấy mã mới về, dựng lại giao diện, khởi động lại dịch vụ chạy nền.
+﻿# Cập nhật văn phòng trên máy này: lấy mã mới về, dựng lại giao diện, khởi động lại dịch vụ chạy nền.
 #
 #   cd $env:USERPROFILE\my-office
 #   .\capnhat.ps1
