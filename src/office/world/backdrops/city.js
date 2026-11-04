@@ -7,6 +7,7 @@ import { BULB_OFF, GY, bollards, boxAt, cI, cPick, cR, colorize, cr, mergeAll, m
 import { buildStreetLife } from './street-life.js';
 import { SHOPS, SHOP_CEIL, SHOP_W, buildShops, officeMiddle, shopDepth } from './shops.js';
 import { pickleSite } from './street-pickle.js';
+import { buildMarket } from './market-build.js';
 
 export let dotTex;
 export let poolTex;
@@ -231,9 +232,15 @@ export function buildCity(G) {
       building(a, b, c, d, floors, { px: Math.abs(b - bx1) < 0.01, pz: Math.abs(d - bz1) < 0.01 });
     }
   }
+  /* The supermarket takes the block across the street on the office's right (market-build.js). The city would leave
+     that one a park to keep the view out clear, so nothing else is displaced; the store is kept low for the same
+     reason. It is the one building here that is not made of the city's merged parts: it builds itself. */
+  const MKT = { x0: XS[6] + STREET_W / 2, x1: XS[7] - STREET_W / 2, z0: ZS[5] + STREET_W / 2, z1: ZS[6] - STREET_W / 2 };
+  let market = null;
   for (let i = 0; i < XS.length - 1; i++) for (let j = 0; j < ZS.length - 1; j++) {
     const x0 = XS[i] + STREET_W / 2, x1 = XS[i + 1] - STREET_W / 2, z0 = ZS[j] + STREET_W / 2, z1 = ZS[j + 1] - STREET_W / 2;
     if (inSB((x0 + x1) / 2, (z0 + z1) / 2)) continue;
+    if (x0 === MKT.x0 && z0 === MKT.z0) { market = buildMarket(G, x0, x1, z0, z1); continue; }
     fillBlock(x0, x1, z0, z1);
   }
   // the shops: the long street fronts nearest the office, one to a building (two on a corner would cut into each other)
@@ -292,10 +299,10 @@ export function buildCity(G) {
   G.add(beacons);
 
   function updateCity(dt, t) {
-    life.update(dt, t); stores.update(dt, t);
+    life.update(dt, t); stores.update(dt, t); market?.update(dt, t);
     beacons.material.opacity = (t % 1.6) < 0.25 ? 1 : 0.18;
   }
-  function setCityNight(on) { street.material.color.set(on ? '#1B1F27' : '#5B616A'); for (const m of buildingMats) m.emissiveIntensity = on ? 0.9 : 0; slabMesh.material.color.setScalar(on ? 0.33 : 1); poolMesh.visible = on; life.night(on); stores.night(on); }
+  function setCityNight(on) { street.material.color.set(on ? '#1B1F27' : '#5B616A'); for (const m of buildingMats) m.emissiveIntensity = on ? 0.9 : 0; slabMesh.material.color.setScalar(on ? 0.33 : 1); poolMesh.visible = on; life.night(on); stores.night(on); market?.night(on); }
   // street: for people from the office going out (outings.js): the way on foot, the GrabFood rider, the shops' doors
   return { update: updateCity, night: setCityNight, street: { ...life.street, doors: stores.doors, shop: stores.shop } };
 }

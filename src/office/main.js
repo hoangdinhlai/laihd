@@ -56,6 +56,7 @@ import * as peopleOutings from './people/outings.js';
 import * as peopleComnha from './people/comnha.js';
 import * as peopleDuty from './people/duty.js';
 import * as peopleStaff from './people/staff.js';
+import * as peopleColleagues from './people/colleagues.js';
 import * as peopleTeatime from './people/teatime.js';
 import * as peopleAccountant from './people/accountant.js';
 import * as peopleRounds from './people/rounds.js';
@@ -173,6 +174,7 @@ const MODULES = [
   peopleOutings,
   peopleComnha,
   peopleStaff,
+  peopleColleagues,
   peopleDuty,
   peopleTeatime,
   peopleAccountant,

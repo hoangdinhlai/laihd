@@ -133,6 +133,7 @@ engine switches to demo mode and talks to no API.
 | `people/billiards.js` | 484 | Pool in the lounge (company floor; the table: world/props/billiards.js). |
 | `people/breaks.js` | 87 | Lunch and the afternoon coffee queue. |
 | `people/chibi-rig.js` | 902 | Office characters, two looks on one rig:   toy   (A) designer-toy chibi, ~2 heads: big round head, low wide-set bean eyes, stubby legs, chunky sneakers, matte vinyl. |
+| `people/colleagues.js` | 86 | Colleagues: people at the desks your sessions are not using, so the floor looks like a working office even when only one or two sessions are open. |
 | `people/comnha.js` | 195 | Cơm nhà: lunch brought from home, warmed at the pantry's two microwaves at noon (company floor; the corner: world/props/microwave.js; who brought some today, and what: src/shared/comnha.js). |
 | `people/comtrua.js` | 172 | Lunch at the quán cơm bình dân across the street (world/backdrops/eat-com.js). |
 | `people/director.js` | 129 | The director: brings each prompt to its desk, receives reports. |
@@ -197,10 +198,11 @@ engine switches to demo mode and talks to no API.
 | `ui/whiteboard.js` | 282 | The whiteboard: agents' tasks and your own sticky notes. |
 | `ui/wrapped.js` | 108 | The week in review: a 1080 × 1350 picture card (the office as it looks right now, then the week's numbers) to save as a PNG or copy, for sharing. |
 | `world/backdrops/beach.js` | 117 | Beach backdrop: sand, surf, palms, umbrellas and loungers. |
-| `world/backdrops/city.js` | 306 | The city backdrop: street grid, buildings, rooftops, lamps and traffic. |
+| `world/backdrops/city.js` | 313 | The city backdrop: street grid, buildings, rooftops, lamps and traffic. |
 | `world/backdrops/countryside.js` | 186 | Countryside backdrop: rice paddies, dikes, a river, a bridge, a village. |
 | `world/backdrops/eat-com.js` | 304 | … |
 | `world/backdrops/index.js` | 49 | Choosing the backdrop: city, countryside or beach. |
+| `world/backdrops/market-build.js` | 260 | The supermarket on the block beside the office: a two-floor store with a car park in front, a glass front facing the office, and a floor you can see right into — aisles of goods, chilled cabinets along the back, three tills by the door, a produce island and a trolley bay. |
 | `world/backdrops/shared.js` | 82 | Pieces shared by the countryside and beach backdrops. |
 | `world/backdrops/shop-cong.js` | 339 | Cộng Cà Phê (Hà Nội, 2007: the first one on Triệu Việt Vương; 75 in Vietnam in 2026, most in Hà Nội and Ho Chi Minh City), as its street shops look: an army-green front with the name in warm white letters on it, CỘNG big and CÀ PHÊ small beside it, olive window frames, wooden slats behind the glass, a little roof of terracotta tiles over the door, a plank over it painted "Ở ĐÂY CÓ BÁN CÀ PHÊ", the round wooden board with the hours (7:00–23:00), and out on its bracket the white box with the logo: CỘNG in olive over a red bar. |
 | `world/backdrops/shop-dmx.js` | 379 | Điện Máy Xanh (dienmayxanh.com), the appliance chain of the Thế Giới Di Động group, as its shops look in Vietnam in 2026: the long sky-blue sign with the mark in a yellow circle (a runner made of slanted squares, a round head) and "Điện máy" then "XANH" in yellow, leaning forward, the second word heavy capitals; posters on the glass (máy lạnh for the hot season, trả góp 0%); inside, the TV wall at the back with the screens lit, front-loading washing machines on an island, a row of fridges, split air conditioners along the wall with yellow price cards, stand fans turning by the window, rice cookers and air fryers on a table, two massage chairs someone is always trying, and the till in blue and yellow; staff in blue; open 8:00–22:00. |
